@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Authored by David Hesketh, Honours Project for Games Development(Software Development) ID: S1437170
+*/
 public class HeartRate : MonoBehaviour {
     public PlayerScript player;
     AudioSource heartbeat;

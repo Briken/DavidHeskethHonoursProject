@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+Authored by David Hesketh, Honours Project for Games Development(Software Development) ID: S1437170
+*/
 public class PlayerScript : MonoBehaviour {
 
 
