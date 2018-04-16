@@ -7,14 +7,13 @@ Authored by David Hesketh, Honours Project for Games Development(Software Develo
 */
 public class PlayerScript : MonoBehaviour {
 
-
+    public GameObject RoundChange;
     public AudioClip punchSound;
     public AudioClip blockSound;
     public AudioClip damageSound;
-
     public AudioClip youWin;
     public AudioClip youLose;
-
+    public bool isPlaying = false;
     public int wins;
 
     public AudioClip round1;
@@ -31,7 +30,7 @@ public class PlayerScript : MonoBehaviour {
     public float health;
     public int blockAmt;
 
-    AudioClip currentClip;
+    public AudioClip currentClip;
     
     public AudioSource playerAudio;
 
@@ -40,21 +39,16 @@ public class PlayerScript : MonoBehaviour {
     public bool roundChange;
 
     public int playerID;
-    public int currentRound;
+    
     public PlayerScript opponent;
     
     // Use this for initialization
     void Start () {
-        Rounds = new AudioClip[3];
-        Rounds[0] = round1;
-        Rounds[1] = round2;
-        Rounds[2] = round3;
 
         roundChange = false;
-        currentRound = 0;
+        
         playerAudio = GetComponent<AudioSource>();
         playerAudio.clip = currentClip;
-        currentClip = Rounds[currentRound];
         playerAudio.panStereo = playerID;
         playerAudio.PlayOneShot(currentClip);
         health = startHealth;
@@ -137,61 +131,12 @@ public class PlayerScript : MonoBehaviour {
         health -= healthChange;
         playerAudio.PlayOneShot(currentClip);
     }
-    public void CallNewRound()
-    {
-        StartCoroutine(NewRound());
-    }
-    public IEnumerator NewRound()
-    {
-        foreach (Button n in myButtons)
-        {
-            n.GetComponent<Button>().enabled = false;
-        }
-        currentRound++;
-        if (health >= 0)
-        {
-            wins++;
-        }
-        if (currentRound < Rounds.Length)
-        {
-            currentClip = Rounds[currentRound];
-        }
-        else
-        {
-            Debug.Log("player " + playerID + "has " + wins + " wins");
-            roundChange = true;
-            if (wins > opponent.wins)
-            {
-                currentClip = youLose;
-                Debug.Log("player " + playerID + "Wins");
-            }
-            if (wins < opponent.wins && currentRound == Rounds.Length)
-            {
-                currentClip = youWin;
-                Debug.Log("player " + playerID + "Loses");
-            }
-        }
-        playerAudio.PlayOneShot(currentClip);
-        health = startHealth;
-        Debug.Log("player" + playerID + " is at full hp");
-        yield return new WaitForSeconds(currentClip.length);
-        foreach (Button n in myButtons)
-        {
-            n.GetComponent<Button>().enabled = true;
-        }
-        if (currentRound == Rounds.Length)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Honours");
-        }
-        roundChange = false;
-    }
 
     public IEnumerator PlayerDeath()
     {
         playerAudio.PlayOneShot(currentClip);
         yield return new WaitForSeconds(currentClip.length);
-        opponent.CallNewRound();
-        StartCoroutine(NewRound());
+
 
     }
     public IEnumerator PlayerEnd()

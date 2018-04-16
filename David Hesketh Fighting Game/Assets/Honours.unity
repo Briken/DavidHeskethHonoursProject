@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -200,6 +200,7 @@ RectTransform:
   m_Children:
   - {fileID: 704936097}
   - {fileID: 1940511354}
+  - {fileID: 182895411}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -364,6 +365,143 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &182895410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 182895411}
+  - component: {fileID: 182895412}
+  - component: {fileID: 182895413}
+  m_Layer: 5
+  m_Name: RoundObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &182895411
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 182895410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7096121}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &182895412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 182895410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f455c0b4e71f2994291a3634c737645a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameButtons:
+  - {fileID: 234402435}
+  - {fileID: 1895671956}
+  - {fileID: 706848825}
+  - {fileID: 1224182376}
+  round1: {fileID: 8300000, guid: 5832166f40d2e2049a69f2a69ca2da96, type: 3}
+  round2: {fileID: 8300000, guid: 3088be533c3421841924a1a865b93f18, type: 3}
+  round3: {fileID: 8300000, guid: eb0495359397bf744a5980ff0004ab9b, type: 3}
+  players:
+  - {fileID: 704936095}
+  - {fileID: 1940511353}
+--- !u!82 &182895413
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 182895410}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &185915204
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +720,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 234402435}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -711,11 +849,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61f0bb7f1808364881c7a57474e9373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoundChange: {fileID: 182895410}
   punchSound: {fileID: 8300000, guid: be040e29934dfb540845ef0e93940326, type: 3}
   blockSound: {fileID: 8300000, guid: 57f980a01ad1cf74c9b4cb7ff24a0d08, type: 3}
   damageSound: {fileID: 8300000, guid: ba46fc416e5f9ab4b84e315d8a8a0577, type: 3}
   youWin: {fileID: 8300000, guid: 40e5c9a71712d0f4db0bc18f9e07918c, type: 3}
   youLose: {fileID: 8300000, guid: dd5a6bd3e05bfdb46940b9cc454743f9, type: 3}
+  isPlaying: 0
   wins: 0
   round1: {fileID: 8300000, guid: 5832166f40d2e2049a69f2a69ca2da96, type: 3}
   round2: {fileID: 8300000, guid: 3088be533c3421841924a1a865b93f18, type: 3}
@@ -728,12 +868,12 @@ MonoBehaviour:
   startHealth: 30
   health: 30
   blockAmt: 1
+  currentClip: {fileID: 0}
   playerAudio: {fileID: 0}
   isPunching: 0
   isBlocking: 0
   roundChange: 0
   playerID: -1
-  currentRound: 0
   opponent: {fileID: 1940511353}
 --- !u!82 &704936096
 AudioSource:
@@ -931,7 +1071,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 706848825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -1078,7 +1218,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 23693ff51c3351947b3c2a0201d5ad8d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1302,7 +1442,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224182376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -1484,7 +1624,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 23693ff51c3351947b3c2a0201d5ad8d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1800,7 +1940,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895671956}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -1902,11 +2042,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61f0bb7f1808364881c7a57474e9373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoundChange: {fileID: 182895410}
   punchSound: {fileID: 8300000, guid: be040e29934dfb540845ef0e93940326, type: 3}
   blockSound: {fileID: 8300000, guid: 57f980a01ad1cf74c9b4cb7ff24a0d08, type: 3}
   damageSound: {fileID: 8300000, guid: ba46fc416e5f9ab4b84e315d8a8a0577, type: 3}
   youWin: {fileID: 8300000, guid: 40e5c9a71712d0f4db0bc18f9e07918c, type: 3}
   youLose: {fileID: 8300000, guid: dd5a6bd3e05bfdb46940b9cc454743f9, type: 3}
+  isPlaying: 0
   wins: 0
   round1: {fileID: 8300000, guid: 5832166f40d2e2049a69f2a69ca2da96, type: 3}
   round2: {fileID: 8300000, guid: 3088be533c3421841924a1a865b93f18, type: 3}
@@ -1919,12 +2061,12 @@ MonoBehaviour:
   startHealth: 30
   health: 30
   blockAmt: 1
+  currentClip: {fileID: 0}
   playerAudio: {fileID: 0}
   isPunching: 0
   isBlocking: 0
   roundChange: 0
   playerID: 1
-  currentRound: 0
   opponent: {fileID: 704936095}
 --- !u!224 &1940511354
 RectTransform:

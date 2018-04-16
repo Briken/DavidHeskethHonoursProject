@@ -1,0 +1,12 @@
+*.csproj
+*.sln
+*.bin
+*.bin
+David Hesketh Fighting Game/Library/UnityAssemblies/SyntaxTree.VisualStudio.Unity.Bridge.dll
+*.xml
+*.dll
+*.dll
+David Hesketh Fighting Game/Library/UnityAssemblies/UnityEditor.iOS.Extensions.Common.dll
+*.xml
+David Hesketh Fighting Game/Library/UnityAssemblies/UnityEngine.TestRunner.dll
+*.info
