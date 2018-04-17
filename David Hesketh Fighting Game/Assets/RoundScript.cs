@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RoundScript : MonoBehaviour {
     public GameObject[] gameButtons;
+
     bool roundChanging;
     bool gameEnding;
 
@@ -43,11 +44,11 @@ public class RoundScript : MonoBehaviour {
             StartNewRound();
         }	
 	}
+
     public void StartNewRound()
     {
         if (roundChanging == false)
         {
-            Debug.Log("round Changing");
             roundChanging = true;
             currentRound++;
             foreach (GameObject n in gameButtons)
@@ -58,10 +59,7 @@ public class RoundScript : MonoBehaviour {
             {
                 players[0].wins++;
             }
-            else
-            {
-                players[1].wins++;
-            }
+			else{ players[1].wins++; }
             
             if (currentRound < rounds.Length)
             {
@@ -70,7 +68,6 @@ public class RoundScript : MonoBehaviour {
                     n.health = n.startHealth;
                 }
                 StartCoroutine(StartRound());
-
             }
             else
             {  
@@ -79,13 +76,11 @@ public class RoundScript : MonoBehaviour {
                     players[0].currentClip = players[0].youLose;
                     players[1].currentClip = players[1].youWin;
                 }
-                if (players[1].wins > players[0].wins)
+                
+				if (players[1].wins > players[0].wins)
                 {
                     players[1].currentClip = players[1].youLose;
                     players[0].currentClip = players[0].youWin;
-                }
-                if (players[0].wins == players[1].wins)
-                {
                 }
                 
                 foreach (PlayerScript n in players)
@@ -126,7 +121,7 @@ public class RoundScript : MonoBehaviour {
         if (gameEnding == false)
         {
             gameEnding = true;
-            yield return new WaitForSeconds(dur);
+            yield return new WaitForSeconds(dur + 10.0f);
             UnityEngine.SceneManagement.SceneManager.LoadScene("Honours");
         }
         else

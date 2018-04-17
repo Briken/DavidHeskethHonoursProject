@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "David Hesketh Fighting Game", "David Hesketh Fighting Game.csproj", "{C1F12EC6-D160-CE47-DE43-17A042817999}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "David Hesketh Fighting Game", "Assembly-CSharp.csproj", "{AB66BB35-377D-712D-7E37-17739F87C8D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1F12EC6-D160-CE47-DE43-17A042817999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1F12EC6-D160-CE47-DE43-17A042817999}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1F12EC6-D160-CE47-DE43-17A042817999}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1F12EC6-D160-CE47-DE43-17A042817999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB66BB35-377D-712D-7E37-17739F87C8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB66BB35-377D-712D-7E37-17739F87C8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB66BB35-377D-712D-7E37-17739F87C8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB66BB35-377D-712D-7E37-17739F87C8D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

@@ -13,16 +13,13 @@ public class PlayerScript : MonoBehaviour {
     public AudioClip damageSound;
     public AudioClip youWin;
     public AudioClip youLose;
+    public AudioClip deathSound;
+    public AudioClip currentClip;
+    public AudioSource playerAudio;
+
     public bool isPlaying = false;
     public int wins;
-
-    public AudioClip round1;
-    public AudioClip round2;
-    public AudioClip round3;
-    AudioClip[] Rounds;
-
-    public AudioClip deathSound;
-
+    
     public Button[] myButtons = new Button[2];
 
     public int damage;
@@ -30,12 +27,8 @@ public class PlayerScript : MonoBehaviour {
     public float health;
     public int blockAmt;
 
-    public AudioClip currentClip;
-    
-    public AudioSource playerAudio;
-
-    public bool isPunching;
-    public bool isBlocking;
+    bool isPunching;
+    bool isBlocking;
     public bool roundChange;
 
     public int playerID;
@@ -50,12 +43,8 @@ public class PlayerScript : MonoBehaviour {
         playerAudio = GetComponent<AudioSource>();
         playerAudio.clip = currentClip;
         playerAudio.panStereo = playerID;
-        playerAudio.PlayOneShot(currentClip);
+       // playerAudio.PlayOneShot(currentClip);
         health = startHealth;
-        #if UNITY_ANDROID || UNITY_EDITOR
-        PhoneMode();
-        #endif
-
     }
 
     // Update is called once per frame
@@ -68,19 +57,42 @@ public class PlayerScript : MonoBehaviour {
             StartCoroutine(PlayerDeath());
         }
     }
-    private void PhoneMode()
-    {
-        foreach (Button n in myButtons)
-        {
-            n.enabled = true;
-        }
-    }
+
     public void StartPunch()
     {
         StartCoroutine(Punch());
     }
+	public void Blocking()
+	{
+		Debug.Log("Blocking");
+		isBlocking = true;
+	}
 
+	public void EndBlock()
+	{
+		isBlocking = false;
+		Debug.Log("BlockEnded");
+	}
+
+	public void BeingPunched(int dmg)
+	{
+		float healthChange;
+		if (isBlocking)
+		{
+			currentClip = blockSound;
+			healthChange = (dmg - blockAmt);
+		}
+		else
+		{
+			currentClip = damageSound;
+			healthChange = damage;
+		}
+		isBlocking = false;
+		health -= healthChange;
+		playerAudio.PlayOneShot(currentClip);
+	}
     
+
     public IEnumerator Punch()
     {
         playerAudio.panStereo = playerID;
@@ -102,48 +114,12 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    public void Blocking()
-    {
-        Debug.Log("Blocking");
-        isBlocking = true;
-    }
-
-    public void EndBlock()
-    {
-        isBlocking = false;
-        Debug.Log("BlockEnded");
-    }
-
-    public void BeingPunched(int dmg)
-    {
-        float healthChange;
-        if (isBlocking)
-        {
-            currentClip = blockSound;
-            healthChange = (dmg - blockAmt);
-        }
-        else
-        {
-            currentClip = damageSound;
-            healthChange = damage;
-        }
-        isBlocking = false;
-        health -= healthChange;
-        playerAudio.PlayOneShot(currentClip);
-    }
+    
 
     public IEnumerator PlayerDeath()
     {
         playerAudio.PlayOneShot(currentClip);
         yield return new WaitForSeconds(currentClip.length);
 
-
     }
-    public IEnumerator PlayerEnd()
-    {
-        playerAudio.PlayOneShot(currentClip);
-        yield return new WaitForSeconds(currentClip.length);
-        roundChange = false;
-    }
-    
 }
